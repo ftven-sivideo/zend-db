@@ -1,0 +1,14 @@
+{
+    "name": "ftven-sivideo/zend-db",
+    "description": "Zend_Db Component",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Arnaud Georgin",
+            "email": "arnaud.georgin.ext@francetv.fr"
+        }
+    ],
+    "require": {
+
+    }
+}

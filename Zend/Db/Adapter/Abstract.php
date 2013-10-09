@@ -181,7 +181,7 @@ abstract class Zend_Db_Adapter_Abstract
             }
         }
 
-        $this->_check//requiredOptions($config);
+        $this->_checkrequiredOptions($config);
 
         $options = array(
             Zend_Db::CASE_FOLDING           => $this->_caseFolding,
@@ -279,7 +279,7 @@ abstract class Zend_Db_Adapter_Abstract
      * @param array $config
      * @throws Zend_Db_Adapter_Exception
      */
-    protected function _check//requiredOptions(array $config)
+    protected function _checkrequiredOptions(array $config)
     {
         // we need at least a dbname
         if (! array_key_exists('dbname', $config)) {

@@ -20,19 +20,6 @@
  * @version    $Id: Abstract.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
-
-/**
- * @see Zend_Db_Adapter_Abstract
- */
-//require_once 'Zend/Db/Adapter/Abstract.php';
-
-
-/**
- * @see Zend_Db_Statement_Pdo
- */
-//require_once 'Zend/Db/Statement/Pdo.php';
-
-
 /**
  * Class for connecting to SQL databases and performing common operations using PDO.
  *
@@ -99,8 +86,7 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             /**
              * @see Zend_Db_Adapter_Exception
              */
-            //require_once 'Zend/Db/Adapter/Exception.php';
-            throw new Zend_Db_Adapter_Exception('The PDO extension is //required for this adapter but the extension is not loaded');
+            throw new Zend_Db_Adapter_Exception('The PDO extension is required for this adapter but the extension is not loaded');
         }
 
         // check the PDO driver is available
@@ -108,7 +94,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             /**
              * @see Zend_Db_Adapter_Exception
              */
-            //require_once 'Zend/Db/Adapter/Exception.php';
             throw new Zend_Db_Adapter_Exception('The ' . $this->_pdoType . ' driver is not currently installed');
         }
 
@@ -140,7 +125,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             /**
              * @see Zend_Db_Adapter_Exception
              */
-            //require_once 'Zend/Db/Adapter/Exception.php';
             throw new Zend_Db_Adapter_Exception($e->getMessage(), $e->getCode(), $e);
         }
 
@@ -178,7 +162,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
         $this->_connect();
         $stmtClass = $this->_defaultStmtClass;
         if (!class_exists($stmtClass)) {
-            //require_once 'Zend/Loader.php';
             Zend_Loader::loadClass($stmtClass);
         }
         $stmt = new $stmtClass($this, $sql);
@@ -240,7 +223,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             /**
              * @see Zend_Db_Statement_Exception
              */
-            //require_once 'Zend/Db/Statement/Exception.php';
             throw new Zend_Db_Statement_Exception($e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -267,7 +249,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
                 /**
                  * @see Zend_Db_Adapter_Exception
                  */
-                //require_once 'Zend/Db/Adapter/Exception.php';
                 throw new Zend_Db_Adapter_Exception($errorInfo[2]);
             }
 
@@ -276,7 +257,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             /**
              * @see Zend_Db_Adapter_Exception
              */
-            //require_once 'Zend/Db/Adapter/Exception.php';
             throw new Zend_Db_Adapter_Exception($e->getMessage(), $e->getCode(), $e);
         }
     }
@@ -338,8 +318,7 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             /**
              * @see Zend_Db_Adapter_Exception
              */
-            //require_once 'Zend/Db/Adapter/Exception.php';
-            throw new Zend_Db_Adapter_Exception('The PDO extension is //required for this adapter but the extension is not loaded');
+            throw new Zend_Db_Adapter_Exception('The PDO extension is required for this adapter but the extension is not loaded');
         }
         switch ($mode) {
             case PDO::FETCH_LAZY:
@@ -354,7 +333,6 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
                 /**
                  * @see Zend_Db_Adapter_Exception
                  */
-                //require_once 'Zend/Db/Adapter/Exception.php';
                 throw new Zend_Db_Adapter_Exception("Invalid fetch mode '$mode' specified");
                 break;
         }

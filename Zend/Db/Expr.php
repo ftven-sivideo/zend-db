@@ -29,7 +29,7 @@
  * when interpolated into SQL statements.
  *
  * For example, when specifying a primary key value when inserting into a new
- * row, some RDBMS brands may //require you to use an expression to generate the
+ * row, some RDBMS brands may require you to use an expression to generate the
  * new value of a sequence.  If this expression is treated as an identifier,
  * it will be quoted and the expression will not be evaluated.  Another example
  * is that you can use Zend_Db_Expr in the Zend_Db_Select::order() method to

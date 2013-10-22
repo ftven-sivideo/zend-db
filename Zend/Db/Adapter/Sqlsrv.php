@@ -122,7 +122,7 @@ class Zend_Db_Adapter_Sqlsrv extends Zend_Db_Adapter_Abstract
              * @see Zend_Db_Adapter_Sqlsrv_Exception
              */
             //require_once 'Zend/Db/Adapter/Sqlsrv/Exception.php';
-            throw new Zend_Db_Adapter_Sqlsrv_Exception('The Sqlsrv extension is //required for this adapter but the extension is not loaded');
+            throw new Zend_Db_Adapter_Sqlsrv_Exception('The Sqlsrv extension is required for this adapter but the extension is not loaded');
         }
 
         $serverName = $this->_config['host'];
@@ -176,7 +176,7 @@ class Zend_Db_Adapter_Sqlsrv extends Zend_Db_Adapter_Abstract
      * @param array $config
      * @throws Zend_Db_Adapter_Exception
      */
-    protected function _check//requiredOptions(array $config)
+    protected function _checkrequiredOptions(array $config)
     {
         // we need at least a dbname
         if (! array_key_exists('dbname', $config)) {
@@ -437,7 +437,7 @@ class Zend_Db_Adapter_Sqlsrv extends Zend_Db_Adapter_Abstract
         $sql    = "exec sp_columns @table_name = " . $this->quoteIdentifier($tableName, true);
         $stmt   = $this->query($sql);
         $result = $stmt->fetchAll(Zend_Db::FETCH_NUM);
-        
+
         // ZF-7698
         $stmt->closeCursor();
 

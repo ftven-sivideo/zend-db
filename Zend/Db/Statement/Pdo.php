@@ -258,7 +258,7 @@ class Zend_Db_Statement_Pdo extends Zend_Db_Statement implements IteratorAggrega
     }
 
     /**
-     * //required by IteratorAggregate interface
+     * required by IteratorAggregate interface
      *
      * @return IteratorIterator
      */
